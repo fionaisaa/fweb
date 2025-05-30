@@ -1,8 +1,9 @@
 import Image from "next/image";
 //import { Geist, Geist_Mono } from "next/font/google";
 import { motion } from "framer-motion";
-import CustomImage from "@/assets/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif"
-import CustomImage1 from "@/assets/images/66bd106312edd26ca53b1b77_Untitled-3 1.avif"
+import CustomBanner from "@/assets/images/fine-dining-restaurant-table-setting-wine-glasses.jpg"
+import CustomImage from "@/assets/images/-1x-1.webp"
+import CustomImage1 from "@/assets/images/new-york-august-26-2021-600nw-2033054912.webp"
 import Button from "@/components/shared/Button";
 import Card from "@/components/shared/Card";
 import { Rocket, BarChart, ShieldCheck, Shield } from "lucide-react";
@@ -34,11 +35,16 @@ useEffect(() => {
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         {/* Hero Section */}
         <motion.section
-          className="w-full py-20 bg-blue-900 text-black text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
+          className="w-full py-32 text-white text-center"
+           style={{
+    backgroundImage: `url(${CustomBanner.src})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
           <h1 className="text-5xl font-bold mb-4">
             Mirë se Vini në Aplikacionin Tonë!
           </h1>
