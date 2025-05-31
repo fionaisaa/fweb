@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-200">
+    <div className="flex items-center justify-center min-h-screen bg-[#fdf6f0]">
       {/* Form Submission Section */}
       <motion.section
         className="w-full max-w-2xl py-10 px-6 bg-white shadow-lg rounded-lg text-center"
@@ -33,34 +33,34 @@ export default function Contact() {
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-[#333]">Emri</label>
+            <label className="block font-medium mb-1 text-black">Emri</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="w-full px-4 py-2 border rounded-lg text-black"
               placeholder="Shkruani emrin tuaj"
             />
           </div>
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-[#333]">Email</label>
+            <label className="block font-medium mb-1 text-black">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="w-full px-4 py-2 border rounded-lg text-black"
               placeholder="Shkruani email-in tuaj"
             />
           </div>
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-[#333]">Mesazhi</label>
+            <label className="block font-medium mb-1 text-black">Mesazhi</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg"
+              className="w-full px-4 py-2 border rounded-lg text-black"
               placeholder="Shkruani mesazhin tuaj"
             ></textarea>
           </div>

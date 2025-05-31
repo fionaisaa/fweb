@@ -92,7 +92,7 @@ export default function About() {
         >
           <h1 className="text-5xl font-extrabold mb-4 tracking-wide">Rreth Nesh</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Mirë se vini në restorantin tonë – një vend ku shijet tradicionale takojnë kreativitetin modern në një atmosferë të ngrohtë dhe mikpritëse.
+            Mirë se vini në restaurantin tonë – një vend ku shijet tradicionale takojnë kreativitetin modern në një atmosferë të ngrohtë dhe mikpritëse.
           </p>
         </motion.section>
 
@@ -120,7 +120,7 @@ export default function About() {
             <h2 className="text-4xl font-bold mb-10 text-[#D2691E]">Vizioni Ynë</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="p-8 bg-white rounded-xl shadow-lg text-gray-800 text-lg leading-relaxed">
-                Ne synojmë të bëhemi restoranti më i dashur në qytet, duke ndërtuar besim përmes cilësisë, qëndrueshmërisë dhe përkushtimit ndaj klientit çdo ditë.
+                Ne synojmë të bëhemi një restaurant më i dashur në qytet, duke ndërtuar besim përmes cilësisë, qëndrueshmërisë dhe përkushtimit ndaj klientit çdo ditë.
               </div>
               <div className="flex justify-center">
                 <Image
