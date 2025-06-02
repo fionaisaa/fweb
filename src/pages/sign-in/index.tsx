@@ -1,6 +1,9 @@
 import { getCsrfToken, signIn } from "next-auth/react";
+import Link from "next/link";
 import router from "next/router";
 import { useState } from "react";
+
+
 
 export default function SignIn({ csrfToken }: { csrfToken: string }) {
   const [email, setEmail] = useState("");
@@ -22,44 +25,56 @@ export default function SignIn({ csrfToken }: { csrfToken: string }) {
     }
   };
 
- return (
-  <div className="pt-12">
-    <div className="flex flex-col items-center justify-center min-h-screen gap-y-20">
-      <div className="mb max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-md">
-        <h2 className="text-black text-2xl font-semibold mb-4">Kycu</h2>
+  return (
+    <div className="pt-20 min-h-screen flex items-center justify-center bg-[#fdf6f0]">
+      <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl border border-gray-200">
+        <h2 className="text-3xl font-bold text-red-600 text-center mb-6">Kyçu në Llogarinë Tënde</h2>
+        
         {error && (
-          <div className="bg-red-100 text-red-700 p-2 mb-4 rounded">
+          <div className="bg-red-100 text-red-700 p-3 mb-4 rounded-md text-sm text-center">
             {error}
           </div>
         )}
+
         <form onSubmit={handleSubmit}>
+          <input type="hidden" name="csrfToken" value={csrfToken} />
+
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 mb-4 border rounded placeholder-gray-400 text-black"
+            className="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg placeholder-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-red-500"
           />
+
           <input
             type="password"
             placeholder="Fjalëkalimi"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 mb-4 border rounded placeholder-gray-400 text-black"
+            className="w-full px-4 py-3 mb-4 border border-gray-300 rounded-lg placeholder-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-red-500"
           />
+
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
-              
-              >
-            Kyqu
+            className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-200"
+          >
+            Kyçu
           </button>
         </form>
+
+<p className="text-sm text-center text-gray-500 mt-4">
+  Nuk ke llogari?{" "}
+  <span
+    onClick={() => router.push("/sign-up")}
+    className="text-red-600 hover:underline cursor-pointer"
+  >
+    Regjistrohu
+  </span>
+</p>
       </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 SignIn.getInitialProps = async (context: any) => {
@@ -68,4 +83,7 @@ SignIn.getInitialProps = async (context: any) => {
   };
 };
 
-SignIn.displayName = "Sign In | My Application";
+SignIn.displayName = "Sign In | Restaurant App";
+
+
+
