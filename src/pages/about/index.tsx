@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import CustomImage from "@/assets/images/66bd1063d7e938d9f5c79317_Untitled-3 1-1.avif"
+import CustomImage from "@/assets/images/fabout.jpg"
 import Image from "next/image"
 
 /*export default function About() {
