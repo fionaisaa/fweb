@@ -91,26 +91,32 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Posts Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 py-20 bg-[#fdf6f0] w-full">
-          {loading ? (
-            <CircularProgress />
-          ) : (
-            posts.map((post) => (
-              <motion.section
-                key={post.id}
-                className="bg-white p-6 rounded-lg shadow-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="text-2xl font-bold mb-2 text-[#7B3F00]">{post.title}</h3>
-                <p className="text-gray-700 mb-4">{post.body}</p>
-                <Button text="Lexo më shumë" variant="secondary" onClick={() => alert("redirect")} />
-              </motion.section>
-            ))
-          )}
-        </div>
+        {/* Testimonials Section */}
+          <motion.section
+            className="w-full py-20 bg-[#fdf6f0] text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-4xl font-bold mb-10 text-[#D2691E]">Çfarë Thonë Klientët Tanë</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <p className="text-gray-800 italic">“Ushqimi ishte i mrekullueshëm dhe shërbimi i pakrahasueshëm. Do të rikthehem patjetër!”</p>
+                <p className="mt-4 font-semibold text-[#7B3F00]">– Ardita K.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <p className="text-gray-800 italic">“Ambienti është shumë i këndshëm dhe menyja ka shumëllojshmëri. 5 yje!”</p>
+                <p className="mt-4 font-semibold text-[#7B3F00]">– Driton R.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-md">
+                <p className="text-gray-800 italic">“Përvoja më e mirë që kam pasur në një restorant lokal. E rekomandoj ngrohtësisht.”</p>
+                <p className="mt-4 font-semibold text-[#7B3F00]">– Elira M.</p>
+              </div>
+            </div>
+          </motion.section>
+
+
+        
 
         {/* Contact Section */}
         <motion.section
