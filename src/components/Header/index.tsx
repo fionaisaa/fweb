@@ -27,10 +27,12 @@ export default function Header() {
     
   ];
 
-  // Mbyll dropdown kur klikohet jashtë tij
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -48,8 +50,8 @@ export default function Header() {
          
         </Link>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex gap-8 relative items-center">
+        {/* Navigation menu on the right */}
+        <nav className="hidden md:flex gap-8 items-center ml-auto relative">
           {items.map((item, index) => (
             <Link
               key={index}
@@ -104,7 +106,7 @@ export default function Header() {
         </nav>
 
         {/* Auth buttons */}
-        <div className="flex gap-4 items-center">
+        <div className="hidden md:flex gap-4 items-center ml-6">
           {status === "authenticated" ? (
             <>
              
