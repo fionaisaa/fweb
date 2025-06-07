@@ -40,7 +40,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={Logo} alt="Logo" width={30} height={30} className="w-10 h-10" />
-          <span className="text-[#7B3F00] font-bold text-xl tracking-wide">Restoranti</span>
+         
         </Link>
 
         {/* Navigation */}
