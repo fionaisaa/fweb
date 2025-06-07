@@ -10,9 +10,7 @@ export default function Header() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // useRef me tipi HTMLDivElement për dropdown
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const items = [
@@ -20,14 +18,15 @@ export default function Header() {
     { name: "About", pathName: "/about" },
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
-    { name: "News", pathName: "/news" },
-     { name: "Locations", pathName: "/locations" },
+    { name: "Locations", pathName: "/locations" },
   ];
 
-  // Mbyll dropdown kur klikohet jashtë tij
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -38,16 +37,16 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-[#fff8f2] border-b shadow-sm py-3">
-      <div className="container mx-auto flex items-center justify-between px-6">
+      <div className="container mx-auto flex items-center px-6">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={Logo} alt="Logo" width={30} height={30} className="w-10 h-10" />
-          <span className="text-[#7B3F00] font-bold text-xl tracking-wide"></span>
+          
         </Link>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex gap-8 relative items-center">
+        {/* Navigation menu on the right */}
+        <nav className="hidden md:flex gap-8 items-center ml-auto relative">
           {items.map((item, index) => (
             <Link
               key={index}
@@ -79,14 +78,19 @@ export default function Header() {
                 >
                   Gallery
                 </Link>
-                
+                <Link
+                  href="/news"
+                  className="block px-4 py-2 text-sm text-[#7B3F00] hover:bg-[#fff8f2] hover:text-[#D2691E]"
+                >
+                  News
+                </Link>
               </div>
             )}
           </div>
         </nav>
 
         {/* Auth buttons */}
-        <div className="flex gap-4 items-center">
+        <div className="hidden md:flex gap-4 items-center ml-6">
           {status === "authenticated" ? (
             <>
               <Link

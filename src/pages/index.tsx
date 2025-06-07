@@ -49,7 +49,7 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <h1 className="text-5xl font-bold mb-4 drop-shadow-xl">
-            Mirë se Vini në Restaurantin Tonë!
+            Mirë se Vini në  Apulia Restaurant !
           </h1>
           <p className="text-xl drop-shadow-lg">
             Tradita jonë në çdo shije – përjetoni shërbim të shkëlqyer dhe ambient të ngrohtë.
@@ -139,4 +139,3 @@ export default function Home() {
 }
 
 Home.displayName = "My Application";
-
