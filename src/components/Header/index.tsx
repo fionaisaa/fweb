@@ -21,6 +21,7 @@ export default function Header() {
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
     { name: "News", pathName: "/news" },
+     { name: "Locations", pathName: "/locations" },
   ];
 
   // Mbyll dropdown kur klikohet jashtë tij
