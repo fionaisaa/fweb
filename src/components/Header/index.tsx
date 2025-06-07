@@ -10,9 +10,7 @@ export default function Header() {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // useRef me tipi HTMLDivElement për dropdown
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const items = [
@@ -21,7 +19,7 @@ export default function Header() {
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
     { name: "News", pathName: "/news" },
-    { name: "Locations", pathName: "/locations" },
+    // { name: "Locations", pathName: "/locations" }, // ❌ hiqur nga menuja kryesore
   ];
 
   // Mbyll dropdown kur klikohet jashtë tij
@@ -39,11 +37,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full bg-[#fff8f2] border-b shadow-sm py-3">
       <div className="container mx-auto flex items-center justify-between px-6">
-
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src={Logo} alt="Logo" width={30} height={30} className="w-10 h-10" />
-          <span className="text-[#7B3F00] font-bold text-xl tracking-wide"></span>
+          <span className="text-[#7B3F00] font-bold text-xl tracking-wide">Restoranti</span>
         </Link>
 
         {/* Navigation */}
@@ -71,15 +68,31 @@ export default function Header() {
             >
               More ▾
             </button>
+
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-40 bg-white border rounded-md shadow-md z-50">
                 <Link
                   href="/gallery"
-                  className="block px-4 py-2 text-sm text-[#7B3F00] hover:bg-[#fff8f2] hover:text-[#D2691E]"
+                  className={cs(
+                    "block px-4 py-2 text-sm text-[#7B3F00] hover:bg-[#fff8f2] hover:text-[#D2691E]",
+                    {
+                      "bg-[#fff8f2] text-[#D2691E] font-semibold": router.pathname === "/gallery",
+                    }
+                  )}
                 >
                   Gallery
                 </Link>
-                
+                <Link
+                  href="/locations"
+                  className={cs(
+                    "block px-4 py-2 text-sm text-[#7B3F00] hover:bg-[#fff8f2] hover:text-[#D2691E]",
+                    {
+                      "bg-[#fff8f2] text-[#D2691E] font-semibold": router.pathname === "/locations",
+                    }
+                  )}
+                >
+                  Locations
+                </Link>
               </div>
             )}
           </div>
