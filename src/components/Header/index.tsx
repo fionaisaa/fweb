@@ -22,7 +22,7 @@ export default function Header() {
      { name: "Team", pathName: "/team" },
     //{ name: "News", pathName: "/news" },
 
-    ...(isAdmin ? [{ name: "News", pathName: "/news" }] : []),
+    ...(isAdmin ? [{ name: "News", pathName: "/news" }, { name: "Orari", pathName: "/orari" }] : []),
     
     
   ];
