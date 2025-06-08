@@ -8,6 +8,7 @@ import { signOut, useSession } from "next-auth/react";
 
 export default function Header() {
   const { data: session, status } = useSession();
+  const isAdmin = (session?.user as any)?.role ==="admin";
   const router = useRouter();
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -18,8 +19,11 @@ export default function Header() {
     { name: "About", pathName: "/about" },
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
-    { name: "News", pathName: "/news" },
-    // { name: "Locations", pathName: "/locations" }, // ❌ hiqur nga menuja kryesore
+    //{ name: "News", pathName: "/news" },
+
+    ...(isAdmin ? [{ name: "News", pathName: "/news" }] : []),
+    
+    
   ];
 
   // Mbyll dropdown kur klikohet jashtë tij
@@ -102,14 +106,9 @@ export default function Header() {
         <div className="flex gap-4 items-center">
           {status === "authenticated" ? (
             <>
-              <Link
-                href="/dashboard"
-                className="text-[#7B3F00] hover:text-[#D2691E] font-medium"
-              >
-                Dashboard
-              </Link>
+             
               <button
-                onClick={() => signOut()}
+                onClick={() => signOut({ callbackUrl: "/sign-in" })}
                 className="bg-[#D2691E] text-white px-4 py-2 rounded hover:bg-[#b85d1b] transition"
               >
                 Sign out
