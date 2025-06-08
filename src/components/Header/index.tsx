@@ -19,6 +19,7 @@ export default function Header() {
     { name: "About", pathName: "/about" },
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
+     { name: "Team", pathName: "/team" },
     //{ name: "News", pathName: "/news" },
 
     ...(isAdmin ? [{ name: "News", pathName: "/news" }] : []),
