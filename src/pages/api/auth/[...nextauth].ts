@@ -39,6 +39,7 @@ const authOptions = {
   },
   session: {
     strategy: "jwt" as "jwt",
+    
   },
   
   callbacks: {

@@ -62,7 +62,7 @@ export default function Orari() {
   };
 
   return (
-    <div className="py-12 px-4 bg-gray-50 min-h-screen">
+    <div className="pt-24 px-4 bg-gray-50 min-h-screen">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-5xl font-extrabold text-yellow-600 uppercase tracking-wide">
           Orari posts
@@ -100,9 +100,7 @@ export default function Orari() {
               >
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">{orari.emri}</h2>
                 <p className="text-gray-600 mb-4">{orari.orari}</p>
-                <p className="text-sm text-gray-500 mb-4">
-                  Krijuar më: {new Date(orari.createdAt).toLocaleDateString()}
-                </p>
+                
                 <div className="flex justify-between items-center">
                         <Link
                           href={`/orari/${orari._id}`}
@@ -139,6 +137,7 @@ export default function Orari() {
         </div>
       ) : (
         <>
+        {/*
           <div className="mt-16 border-t pt-10">
             <h2 className="text-3xl font-bold text-center text-yellow-500 mb-10">
               Oraret e testit (JSONPlaceholder)
@@ -169,6 +168,7 @@ export default function Orari() {
               ))}
             </div>
           </div>
+          */}
         </>
       )}
     </div>

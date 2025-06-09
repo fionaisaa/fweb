@@ -183,8 +183,8 @@ export default function About() {
           </div>
         </motion.section>
 
-
-        {/* Team Section */}
+        
+        {/* Team Section 
           <motion.section
             className="w-full py-20 bg-white text-center"
             initial={{ opacity: 0 }}
@@ -237,6 +237,8 @@ export default function About() {
             </div>
 
           </motion.section>
+          */}
+          
 
 
       </div>
