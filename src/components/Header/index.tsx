@@ -19,10 +19,10 @@ export default function Header() {
     { name: "About", pathName: "/about" },
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
-     { name: "Team", pathName: "/team" },
+     
     //{ name: "News", pathName: "/news" },
 
-    ...(isAdmin ? [{ name: "News", pathName: "/news" }, { name: "Orari", pathName: "/orari" }] : []),
+    ...(isAdmin ? [{ name: "News", pathName: "/news" }, { name: "Orari", pathName: "/orari" }, { name: "Team", pathName: "/team" }] : []),
     
     
   ];
@@ -99,6 +99,17 @@ export default function Header() {
                   )}
                 >
                   Locations
+                </Link>
+                <Link
+                  href="/team"
+                  className={cs(
+                    "block px-4 py-2 text-sm text-[#7B3F00] hover:bg-[#fff8f2] hover:text-[#D2691E]",
+                    {
+                      "bg-[#fff8f2] text-[#D2691E] font-semibold": router.pathname === "/team",
+                    }
+                  )}
+                >
+                  Team
                 </Link>
               </div>
             )}
