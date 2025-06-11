@@ -19,10 +19,14 @@ export default function Header() {
     { name: "About", pathName: "/about" },
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
+<<<<<<< HEAD
     { name: "Menu", pathName: "/menu" },
+=======
+     { name: "Team", pathName: "/team" },
+>>>>>>> f354884e5332751cafe3913462d7a5d8bde12c2f
     //{ name: "News", pathName: "/news" },
 
-    ...(isAdmin ? [{ name: "News", pathName: "/news" }] : []),
+    ...(isAdmin ? [{ name: "News", pathName: "/news" }, { name: "Orari", pathName: "/orari" }] : []),
     
     
   ];

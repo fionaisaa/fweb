@@ -49,7 +49,7 @@ const locations = [
 
 export default function RestaurantLocations() {
   return (
-    <div className="pt-14 bg-[#fefcf9] min-h-screen">
+    <div className="pt-14 bg-[#fff3e0] min-h-screen">
       <motion.section
         className="w-full py-20 text-center"
         initial={{ opacity: 0 }}
