@@ -1,5 +1,6 @@
 import clientPromise from "@/lib/mongodb"
 import { User } from "@/pages/api/models/User"
+import bcrypt from "bcryptjs"
 import { ObjectId } from "mongodb"
 
 const DB_NAME = "nextapp" 
@@ -86,3 +87,35 @@ const COLLECTION_NAME = "users"
     })
     return result
   }
+
+  export async function ensureAdminUser(){
+    const ADMIN_EMAIL ="admin@example.com";
+    const ADMIN_PASSWORD = "admin123";
+    const ADMIN_NAME = "Admin User";
+
+    const client = await clientPromise;
+    const db = client.db(DB_NAME);
+
+    const existingAdmin = await db.collection(COLLECTION_NAME).findOne({
+      email:ADMIN_EMAIL.toLowerCase(),
+      role:"admin"
+    });
+    
+    if(!existingAdmin){
+      const hashedPassword = await bcrypt.hash(ADMIN_PASSWORD, 10);
+      await db.collection(COLLECTION_NAME).insertOne({
+        name:ADMIN_NAME,
+        email:ADMIN_EMAIL.toLowerCase(),
+        password: hashedPassword,
+        role:"admin",
+        createdAt: new Date()
+      });
+      console.log("Admin user created successfully");
+    }
+  }
+
+  ensureAdminUser().catch(err =>{
+    console.error("Failed to ensure admin user:", err);
+  });
+    
+  

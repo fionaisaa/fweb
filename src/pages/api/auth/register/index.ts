@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { createUser, getUser } from "../../services/User";
 import bcrypt from "bcryptjs";
 import { User } from "../../models/User";
+import email from "next-auth/providers/email";
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,7 +15,8 @@ export default async function handler(
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     
   if (req.method === "POST") {
-    const { name, email, password } = req.body as User;
+    const { name, email, password,role } = req.body as User;
+    const userRole = role || "user";
     if (!name || !email || !password) {
       return res
         .status(400)
@@ -32,6 +35,7 @@ export default async function handler(
         email,
         password: hashedPassword,
         createdAt: new Date(),
+        role: userRole
       };
       const result = await createUser(newUser);
       if (!result) {
@@ -49,4 +53,6 @@ export default async function handler(
     res.status(405).end(`Metoda ${req.method} nuk është e lejuar`);
     
   }
+  
+
 }
