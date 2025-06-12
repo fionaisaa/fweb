@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import CustomImage from "@/assets/images/fabout.jpg";
+import CustomImage from "@/assets/images/fe25ec91fir-scaled.webp";
+import CustomImage2 from "@/assets/images/luxury-table-settings-fine-dining-served-decorated-table-with-food-guests-restaur_1319275-980.jpg"
 import Image from "next/image";
 
 export default function About() {
@@ -51,17 +52,53 @@ export default function About() {
         </motion.section>
 
         {/* Mission Section me max-w-7xl dhe padding më të madh */}
-        <motion.section
-          className="max-w-7xl py-20 px-12 text-center mx-auto"
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <h2 className="text-4xl font-bold mb-6 text-[#D2691E]">Misioni Ynë</h2>
-          <p className="text-gray-700 text-lg max-w-none mx-auto">
-            Të ofrojmë përvojën më të mirë të ngrënies për klientët tanë, përmes ushqimit të freskët, shërbimit të përzemërt dhe një ambienti të rehatshëm ku secili ndihet si në shtëpi.
-          </p>
-        </motion.section>
+        {/* Mission Section - Version më modern me ikona dhe animacion */}
+          <motion.section
+            className="max-w-7xl py-24 px-8 bg-white text-center mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-4xl font-bold mb-12 text-[#D2691E]">Misioni Ynë</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: "Shije Autentike",
+                  icon: "🍽️",
+                  desc: "Kombinojmë recetat tradicionale me kreativitetin modern për një përvojë unike.",
+                },
+                {
+                  title: "Mikpritje e Veçantë",
+                  icon: "🤝",
+                  desc: "Çdo klient pritet si mysafir i nderuar – me buzëqeshje, kujdes dhe respekt.",
+                },
+                {
+                  title: "Ambiente Komode",
+                  icon: "🏡",
+                  desc: "Krijojmë një hapësirë të ngrohtë dhe relaksuese për çdo moment të rëndësishëm.",
+                },
+                {
+                  title: "Përkushtim i Përditshëm",
+                  icon: "🔥",
+                  desc: "Çdo ditë përpiqemi të jemi më të mirë – në çdo shërbim dhe çdo pjatë.",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-[#fff8f2] p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300"
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-semibold text-[#7B3F00] mb-2">{item.title}</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+
 
         {/* Vision Section me max-w-7xl dhe padding më të madh */}
         <motion.section
@@ -97,7 +134,7 @@ export default function About() {
                 transition={{ duration: 1 }}
               >
                 <Image
-                  src={CustomImage}
+                  src={CustomImage2}
                   alt="Foto Vizioni"
                   width={400}
                   height={300}
