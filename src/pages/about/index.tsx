@@ -14,8 +14,8 @@ export default function About() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl font-extrabold mb-4 tracking-wider drop-shadow-lg">Rreth Nesh</h1>
-          <p className="text-xl max-w-3xl mx-auto drop-shadow-md">
+          <h1 className="text-5xl font-extrabold mb-4 tracking-wider drop-shadow-lg font-[Playfair_Display]">Rreth Nesh</h1>
+          <p className="text-2xl max-w-3xl mx-auto drop-shadow-md font-[Playfair_Display] ">
             Mirë se vini në restaurantin tonë – një vend ku shijet tradicionale takojnë kreativitetin modern në një atmosferë të ngrohtë dhe mikpritëse.
           </p>
         </motion.section>
