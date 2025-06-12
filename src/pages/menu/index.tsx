@@ -78,20 +78,20 @@ export default function Menu() {
   };
 
   return (
-    <div className="min-h-screen pt-24 py-12 px-6 bg-[#fff8f0]">
-      <h1 className="text-4xl font-bold text-center text-[#5a2d0c] mb-12 uppercase tracking-wide">
+    <div className="min-h-screen font-[Playfair_Display]  pt-24 py-12 px-6 bg-[#fff3e0]">
+      <h1 className="text-4xl font-[Playfair_Display]  text-center text-[#5a2d0c] mb-12 uppercase tracking-wide">
         Menu / Price List
       </h1>
       {isAdmin && (<div className="text-center pb-10">
         <Link href="/create/menu">
-          <button className="px-6 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition">
+          <button className="px-6 py-2 bg-yellow-600  font-[Playfair_Display] text-white rounded-lg hover:bg-yellow-700 transition">
             Shto Menu
           </button>
         </Link>
       </div>)}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {menusLoading ? (
-          <div className="col-span-full flex justify-center">
+          <div className="col-span-full font-[Playfair_Display]  flex justify-center">
             <span className="text-yellow-600">Duke u ngarkuar...</span>
           </div>
         ) : menuData && menuData.length > 0 ? (

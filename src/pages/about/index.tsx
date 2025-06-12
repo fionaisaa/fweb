@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="pt-14">
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#fff9f4]">
+      <div className="flex flex-col items-center justify-center min-h-screen  bg-[#fdf6f0]">
 
         {/* Hero Section */}
         <motion.section
@@ -15,7 +15,7 @@ export default function About() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl font-extrabold mb-4 tracking-wider drop-shadow-lg font-[Playfair_Display]">Rreth Nesh</h1>
+          <h1 className="text-5xl font-[Playfair_Display]  mb-4 tracking-wider drop-shadow-lg font-[Playfair_Display]">Rreth Nesh</h1>
           <p className="text-2xl max-w-3xl mx-auto drop-shadow-md font-[Playfair_Display] ">
             Mirë se vini në restaurantin tonë – një vend ku shijet tradicionale takojnë kreativitetin modern në një atmosferë të ngrohtë dhe mikpritëse.
           </p>
@@ -23,20 +23,20 @@ export default function About() {
 
         {/* Historiku Section me foto anash */}
         <motion.section
-          className="max-w-6xl py-20 px-8 bg-[#fdf6f0] rounded-3xl  mx-4 md:mx-auto mt-16"
+          className="max-w-6xl py-20 px-8 bg-[#fdf6f0] rounded-3xl  font-[Playfair_Display] mx-4 md:mx-auto mt-16"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-bold mb-8 text-[#D2691E] text-center md:text-left">Historiku i Restorantit</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <h2 className="text-4xl font-[Playfair_Display] mb-8 text-[#D2691E] text-center md:text-left">Historiku i Restorantit</h2>
+          <div className="grid grid-cols-1 font-[Playfair_Display]  md:grid-cols-2 gap-12 items-center">
             {/* Teksti */}
-            <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto md:mx-0">
+            <p className="text-gray-700  font-[Playfair_Display] text-lg leading-relaxed max-w-4xl mx-auto md:mx-0">
               Restoranti ynë u themelua në vitin 1995 me qëllim të ruajtjes së traditës së shijes autentike shqiptare, duke e kombinuar atë me teknikat bashkëkohore të gatimit. 
               Gjatë dekadave, ne kemi rritur përkushtimin ndaj cilësisë dhe mikpritjes, duke u bërë një destinacion i preferuar për familjet dhe vizitorët që kërkojnë një eksperiencë kulinare të paharrueshme.
             </p>
             {/* Foto */}
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center font-[Playfair_Display] md:justify-end">
               <Image
                 src={CustomImage}
                 alt="Foto Historiku Restorantit"
@@ -59,9 +59,9 @@ export default function About() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-4xl font-bold mb-12 text-[#D2691E]">Misioni Ynë</h2>
+            <h2 className="text-4xl font-[Playfair_Display]mb-12 text-[#D2691E]">Misioni Ynë</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1  font-[Playfair_Display] md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   title: "Shije Autentike",
@@ -86,13 +86,13 @@ export default function About() {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-[#fff8f2] p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300"
+                  className="bg-[#fff8f2] p-6 rounded-2xl  font-[Playfair_Display] shadow-md hover:shadow-xl transition duration-300"
                   initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                   <div className="text-5xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-semibold text-[#7B3F00] mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-[Playfair_Display] text-[#7B3F00] mb-2">{item.title}</h3>
                   <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
@@ -108,19 +108,19 @@ export default function About() {
           transition={{ duration: 1 }}
         >
           <div className="container max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6 text-[#D2691E]">Vizioni Ynë</h2>
+            <h2 className="text-4xl font-[Playfair_Display]  mb-6 text-[#D2691E]">Vizioni Ynë</h2>
             <p className="max-w-none mx-auto text-gray-700 text-base mb-12">
               Ne jemi të përkushtuar të sjellim një përvojë të veçantë kulinare që ndërtohet mbi pasionin, përkushtimin dhe dashurinë për ushqimin cilësor.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <motion.div
-                className="p-8 bg-white rounded-xl shadow-lg text-gray-800 text-lg leading-relaxed relative overflow-hidden"
+                className="p-8 bg-white font-[Playfair_Display]  rounded-xl shadow-lg text-gray-800 text-lg leading-relaxed relative overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
                 <p>
-                  Ne synojmë të bëhemi <span className="font-semibold text-[#D2691E]">restoranti më i dashur në qytet</span>, 
+                  Ne synojmë të bëhemi <span className="font-[Playfair_Display]  text-[#D2691E]">restoranti më i dashur në qytet</span>, 
                   duke ndërtuar besim përmes cilësisë, qëndrueshmërisë dhe përkushtimit ndaj klientit çdo ditë.
                 </p>
                 <p className="italic text-[#D2691E] mt-6">
@@ -138,7 +138,7 @@ export default function About() {
                   alt="Foto Vizioni"
                   width={400}
                   height={300}
-                  className="rounded-xl shadow-xl object-cover transition-transform duration-500 hover:scale-105"
+                  className="rounded-xl shadow-xl  font-[Playfair_Display] object-cover transition-transform duration-500 hover:scale-105"
                 />
               </motion.div>
             </div>
@@ -152,18 +152,18 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-bold mb-10 text-[#D2691E]">Vlerat Tona</h2>
+          <h2 className="text-4xl font-[Playfair_Display]  mb-10 text-[#D2691E]">Vlerat Tona</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-semibold mb-2 text-[#7B3F00]">Freski</h3>
+              <h3 className="text-2xl font-[Playfair_Display] mb-2 text-[#7B3F00]">Freski</h3>
               <p>Ushqim i përgatitur çdo ditë me përbërës të freskët dhe vendas.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-semibold mb-2 text-[#7B3F00]">Respekt</h3>
+              <h3 className="text-2xl font-[Playfair_Display]  mb-2 text-[#7B3F00]">Respekt</h3>
               <p>Respektojmë çdo klient dhe punonjës, duke ndërtuar një komunitet të fortë.</p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-semibold mb-2 text-[#7B3F00]">Përkushtim</h3>
+              <h3 className="text-2xl font-[Playfair_Display] mb-2 text-[#7B3F00]">Përkushtim</h3>
               <p>Punojmë çdo ditë për të ofruar përvojën më të mirë të ngrënies.</p>
             </div>
           </div>

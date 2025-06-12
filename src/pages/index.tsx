@@ -51,10 +51,10 @@ export default function Home() {
 
           {/* Overlay Content */}
           <div className="relative z-10 px-4">
-            <h1 className="text-5xl font-bold mb-4 drop-shadow-xl text-gray-100">
+            <h1 className="text-5xl font-[Playfair_Display]  mb-4 drop-shadow-xl text-gray-100">
               Mirë se Vini në Apulia Restaurant!
             </h1>
-            <p className="text-xl drop-shadow-lg text-orange-300">
+            <p className="text-xl  font-[Playfair_Display] drop-shadow-lg text-orange-300">
               Tradita jonë në çdo shije – përjetoni shërbim të shkëlqyer dhe ambient të ngrohtë.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <div className="container m-auto">
-            <h2 className="text-4xl font-bold mb-10 text-[#D2691E]">Pse të na Zgjidhni</h2>
+            <h2 className="text-4xl  font-[Playfair_Display] mb-10 text-[#D2691E]">Pse të na Zgjidhni</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card title="Shije Unike" description="Receta të veçanta tradicionale dhe moderne." icon={Rocket} />
               <Card title="Ambient Komod" description="Krijuar për rehati dhe relaksim." icon={BarChart} />
@@ -101,7 +101,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-bold mb-10 text-[#D2691E]">Çfarë Thonë Klientët Tanë</h2>
+          <h2 className="text-4xl  font-[Playfair_Display]  mb-10 text-[#D2691E]">Çfarë Thonë Klientët Tanë</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
             <div className="bg-white p-6 rounded-xl shadow-md">
               <p className="text-gray-800 italic">
@@ -131,7 +131,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
+          <h2 className="text-4xl  font-[Playfair_Display] mb-6 bg-[#7B3F00]" >Contact Us</h2>
           <p>Email: kontakt@restoranti.com</p>
           <p>Tel: +383 123 456 789</p>
           <p>Adresa: Prishtinë, Kosovë</p>

@@ -25,7 +25,7 @@ const images = [
 export default function Gallery() {
   return (
     <div className="pt-20 bg-[#fff3e0] min-h-screen">
-    <h1 className="font-dancing text-5xl text-center text-[#7B3F00] tracking-wider mb-1">
+    <h1 className=" font-[Playfair_Display] text-5xl text-center text-[#7B3F00] tracking-wider mb-1">
         Aromat e traditës në pamje
       </h1>
       <div className="container mx-auto px-6 pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

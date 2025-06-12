@@ -43,7 +43,7 @@ export default function Header() {
   }, []);
 
   return (
-  <header className="fixed top-0 z-50 w-full bg-[#fff8f2] border-b shadow-sm py-3">
+  <header className="fixed top-0 z-50 w-full bg-[#fff8f2]  font-[Playfair_Display] border-b shadow-sm py-3">
     <div className="container mx-auto flex items-center justify-between px-6 relative">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">

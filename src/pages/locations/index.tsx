@@ -56,8 +56,8 @@ export default function RestaurantLocations() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-5xl font-extrabold mb-6 text-[#7B3F00]">Lokacionet Tona</h1>
-        <p className="text-lg max-w-3xl mx-auto text-gray-700">
+        <h1 className="text-5xl font-[Playfair_Display] mb-6 text-[#7B3F00]">Lokacionet Tona</h1>
+        <p className="text-2xl  font-[Playfair_Display] mx-auto text-gray-700">
         Nga Prishtina në Prizren  njësoj e shijshme kudo . Gjej lokacionin më të afërt dhe na vizito për një përvojë unike kulinare.
         </p>
       </motion.section>
@@ -82,7 +82,7 @@ export default function RestaurantLocations() {
               className="w-full h-56 object-cover"
             />
             <div className="p-6 text-left">
-              <h2 className="text-2xl font-semibold text-[#D2691E] mb-2">{location.city}</h2>
+              <h2 className="text-2xl font-[Playfair_Display]  text-[#D2691E] mb-2">{location.city}</h2>
               <p className="text-gray-700 mb-1">📍 {location.address}</p>
               <p className="text-gray-600">📞 {location.phone}</p>
             </div>

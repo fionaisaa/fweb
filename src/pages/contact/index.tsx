@@ -52,57 +52,58 @@ export default function Contact() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl font-bold mb-6 text-red-800">
+        <h2 className="text-4xl  font-[Playfair_Display] mb-6 text-[#D2691E]">
           Formulari ynë
         </h2>
 
         {/* Mesazhi i gabimit */}
         {error && (
-          <div className="mb-4 text-red-600 font-medium">{error}</div>
+          <div className="mb-4 text-red-600 font-[Playfair_Display]">{error}</div>
         )}
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-black">Emri</label>
+            <label className="block font-[Playfair_Display] mb-1 text-black">Emri</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg text-black"
+              className="w-full px-4 py-2 border font-[Playfair_Display] rounded-lg text-black"
               placeholder="Shkruani emrin tuaj"
             />
           </div>
 
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-black">Email</label>
+            <label className="block font-[Playfair_Display] mb-1 text-black">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg text-black"
+              className="w-full px-4 py-2 border font-[Playfair_Display] rounded-lg text-black"
               placeholder="Shkruani email-in tuaj"
             />
           </div>
 
           <div className="mb-4 text-left">
-            <label className="block font-medium mb-1 text-black">Mesazhi</label>
+            <label className="block font-[Playfair_Display] mb-1 text-black">Mesazhi</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-lg text-black"
+              className="w-full px-4 py-2 border font-[Playfair_Display]  rounded-lg text-black"
               placeholder="Shkruani mesazhin tuaj"
             />
           </div>
 
           <button
-            type="submit"
-            className="px-6 py-2 bg-red-900 text-white rounded-lg hover:bg-red-800"
-          >
-            Dërgo
-          </button>
+  type="submit"
+  className="px-6 py-2 bg-orange-500 hover:bg-orange-600 font-[Playfair_Display] text-white rounded-lg transition duration-300 shadow-md"
+>
+  Dërgo
+</button>
+
         </form>
       </motion.section>
     </div>

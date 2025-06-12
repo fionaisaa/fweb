@@ -48,9 +48,9 @@ export default function TeamPage() {
   };
 
   return (
-    <div className="pt-24 px-4 bg-gray-50 min-h-screen">
+    <div className="pt-24 px-4 font-[Playfair_Display] text-2xl   bg-[#fff3e0]  min-h-screen">
       <div className="max-w-5xl mx-auto text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-yellow-600 uppercase tracking-wide">
+        <h1 className="text-5xl font-[Playfair_Display]  text-yellow-600 uppercase tracking-wide">
           Ekipi Ynë
         </h1>
         <p className="text-gray-600 mt-4">
