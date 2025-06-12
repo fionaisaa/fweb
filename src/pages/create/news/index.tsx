@@ -1,5 +1,3 @@
-
-
 import useFetch from "@/hooks/useFetch";
 import { News } from "@/pages/api/models/News";
 import router from "next/router";
@@ -17,34 +15,39 @@ export default function CreateNews() {
   };
 
   return (
-    <div className="pt-12">
-      <div className="flex flex-col items-center justify-center min-h-screen gap-y-20">
-        <div className="mb-10 max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-black text-2xl font-semibold mb-4">
-            Shto News të ri
-          </h2>
+    <div className="min-h-screen bg-[#fff8f0] flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-xl bg-white rounded-2xl shadow-xl p-8">
+        <h2 className="text-3xl font-bold text-center text-[#5a2d0c] mb-8">
+          Shto News të ri
+        </h2>
+
+        <form onSubmit={(e) => { e.preventDefault(); handleCreate(); }} className="space-y-4">
           <input
             type="text"
             placeholder="Titulli"
             value={newNews.title}
             onChange={(e) => setNewNews({ ...newNews, title: e.target.value })}
-            className="w-full px-4 py-2 mb-4 border rounded placeholder-gray-400 text-black"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required
           />
+
           <textarea
             placeholder="Përmbajtja"
             value={newNews.body}
             onChange={(e) => setNewNews({ ...newNews, body: e.target.value })}
-            className="w-full px-4 py-2 mb-4 border rounded placeholder-gray-400 text-black"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            rows={4}
+            required
           />
+
           <button
-            onClick={handleCreate}
-            className="px-6 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
+            type="submit"
+            className="w-full py-3 bg-yellow-600 text-white font-semibold rounded-lg hover:bg-yellow-700 transition duration-200"
           >
             Shto News
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
-  
 }
