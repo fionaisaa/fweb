@@ -1,11 +1,14 @@
-import { getCsrfToken, signIn } from "next-auth/react";
-import Link from "next/link";
-import router from "next/router";
+import { getCsrfToken, getProviders, signIn } from "next-auth/react";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
+interface SignInProps {
+  csrfToken: string;
+  providers: any;
+}
 
-
-export default function SignIn({ csrfToken }: { csrfToken: string }) {
+export default function SignIn({ csrfToken, providers }: SignInProps) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -28,8 +31,10 @@ export default function SignIn({ csrfToken }: { csrfToken: string }) {
   return (
     <div className="pt-20 min-h-screen flex items-center justify-center bg-[#fdf6f0]">
       <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl border border-gray-200">
-        <h2 className="text-3xl font-bold text-red-600 text-center mb-6">Kyçu në Llogarinë Tënde</h2>
-        
+        <h2 className="text-3xl font-bold text-red-600 text-center mb-6">
+          Kyçu në Llogarinë Tënde
+        </h2>
+
         {error && (
           <div className="bg-red-100 text-red-700 p-3 mb-4 rounded-md text-sm text-center">
             {error}
@@ -63,27 +68,47 @@ export default function SignIn({ csrfToken }: { csrfToken: string }) {
           </button>
         </form>
 
-<p className="text-sm text-center text-gray-500 mt-4">
-  Nuk ke llogari?{" "}
-  <span
-    onClick={() => router.push("/sign-up")}
-    className="text-red-600 hover:underline cursor-pointer"
-  >
-    Regjistrohu
-  </span>
-</p>
+       {providers?.google && (
+      <div className="mt-4">
+    <button
+      onClick={() => signIn("google", { callbackUrl: "/" })}
+      className="w-full flex items-center justify-center border border-gray-300 rounded-lg py-2 hover:bg-gray-100 transition"
+    >
+      <img
+        src="https://www.svgrepo.com/show/475656/google-color.svg"
+        alt="Google Icon"
+        className="w-5 h-5 mr-2"
+      />
+      <span className="text-sm font-medium text-gray-700">
+        Kyçu me Google
+      </span>
+    </button>
+  </div>
+)}
+        <p className="text-sm text-center text-gray-500 mt-4">
+          Nuk ke llogari?{" "}
+          <span
+            onClick={() => router.push("/sign-up")}
+            className="text-red-600 hover:underline cursor-pointer"
+          >
+            Regjistrohu
+          </span>
+        </p>
       </div>
     </div>
   );
 }
 
-SignIn.getInitialProps = async (context: any) => {
+export async function getServerSideProps(context: any) {
+  const csrfToken = await getCsrfToken(context);
+  const providers = await getProviders();
   return {
-    csrfToken: await getCsrfToken(context),
+    props: {
+      csrfToken,
+      providers,
+    },
   };
-};
-
-SignIn.displayName = "Sign In | Restaurant App";
+}
 
 
 

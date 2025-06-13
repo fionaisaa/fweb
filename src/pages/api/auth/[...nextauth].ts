@@ -6,10 +6,27 @@ import clientPromise from "@/lib/mongodb";
 import NextAuth from "next-auth";
 import type  { JWT } from "next-auth/jwt";
 import type { Session, User } from "next-auth";
+import GoogleProvider from "next-auth/providers/google"
+import { debug } from "console";
 
 const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
+    GoogleProvider({
+      clientId:process.env.GOOGLE_CLIENT_ID!,
+      clientSecret:process.env.GOOGLE_CLIENT_SECRET!,
+      profile(profile){
+        console.log("Profile google:",profile);
+
+        return{
+          ...profile,
+          id:profile.sub,
+          role:"user"
+          
+        }
+      }
+
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
@@ -61,9 +78,12 @@ const authOptions = {
     }
     return session;
   },
-},
+ },
+ 
 
   secret: process.env.NEXTAUTH_SECRET,
+
+  debug:true,
 };
 
 // export { authOptions };
