@@ -56,7 +56,8 @@ const authOptions = {
   },
   session: {
     strategy: "jwt" as "jwt",
-    
+     maxAge: 60 * 60,
+
   },
   
   callbacks: {
