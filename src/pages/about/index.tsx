@@ -28,11 +28,11 @@ export default function About() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-4xl font-[Playfair_Display] mb-8 text-[#D2691E] text-center md:text-left">Historiku i Restorantit</h2>
+          <h2 className="text-4xl font-[Playfair_Display] mb-8 text-[#D2691E] text-center md:text-left">Historiku i Restaurantit</h2>
           <div className="grid grid-cols-1 font-[Playfair_Display]  md:grid-cols-2 gap-12 items-center">
             {/* Teksti */}
             <p className="text-gray-700  font-[Playfair_Display] text-lg leading-relaxed max-w-4xl mx-auto md:mx-0">
-              Restoranti ynë u themelua në vitin 1995 me qëllim të ruajtjes së traditës së shijes autentike shqiptare, duke e kombinuar atë me teknikat bashkëkohore të gatimit. 
+              Restauranti ynë u themelua në vitin 1995 me qëllim të ruajtjes së traditës së shijes autentike shqiptare, duke e kombinuar atë me teknikat bashkëkohore të gatimit. 
               Gjatë dekadave, ne kemi rritur përkushtimin ndaj cilësisë dhe mikpritjes, duke u bërë një destinacion i preferuar për familjet dhe vizitorët që kërkojnë një eksperiencë kulinare të paharrueshme.
             </p>
             {/* Foto */}
@@ -120,7 +120,7 @@ export default function About() {
                 transition={{ duration: 1 }}
               >
                 <p>
-                  Ne synojmë të bëhemi <span className="font-[Playfair_Display]  text-[#D2691E]">restoranti më i dashur në qytet</span>, 
+                  Ne synojmë të bëhemi <span className="font-[Playfair_Display]  text-[#D2691E]">restauranti më i dashur në qytet</span>, 
                   duke ndërtuar besim përmes cilësisë, qëndrueshmërisë dhe përkushtimit ndaj klientit çdo ditë.
                 </p>
                 <p className="italic text-[#D2691E] mt-6">
