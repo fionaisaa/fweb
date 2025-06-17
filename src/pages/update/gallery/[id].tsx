@@ -1,0 +1,111 @@
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import useFetch from "@/hooks/useFetch";
+import { CircularProgress } from "@mui/material";
+
+export interface Gallery {
+  _id: string;
+  image?: string;
+  createdAt?: string;
+}
+
+export default function UpdateGallery() {
+  const router = useRouter();
+  const { id } = router.query;
+  const { data: galleryPhoto, loading, putData } = useFetch<Gallery>(id ? `/api/gallery/${id}` : null);
+
+  const [formData, setFormData] = useState({
+    image: "",
+  });
+
+  useEffect(() => {
+    if (galleryPhoto) {
+      setFormData({
+        
+        image: galleryPhoto.image || "",
+      });
+    }
+  }, [galleryPhoto]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!id) {
+      alert("ID e fotos se gallery nuk është përcaktuar!");
+      return;
+    }
+
+    try {
+      await putData(formData);
+      alert("Fotoja e gallerys u përditësua me sukses!");
+      router.push("/gallery"); 
+    } catch (error) {
+      console.error("Gabim gjatë përditësimit:", error);
+      alert("Ndodhi një gabim gjatë përditësimit");
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <CircularProgress />
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Përditëso Foton E Gallery-s</h1>
+
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+
+        <div className="mb-4">
+          <label htmlFor="image" className="block text-gray-700 mb-2">
+            URL e Fotos (opsionale)
+          </label>
+          <input
+            id="image"
+            name="image"
+            type="text"
+            value={formData.image}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border rounded-lg"
+          />
+        </div>
+
+        {/* Këtu e shfaqim foton në katror 150x150, me object-contain që nuk e pret */}
+        {formData.image && (
+          <img
+            src={formData.image}
+            alt="Foto e gallery"
+            style={{
+              display: "block",
+              margin: "20px auto",
+              width: "150px",
+              height: "150px",
+              objectFit: "contain",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+              backgroundColor: "#f9f9f9",
+            }}
+          />
+        )}
+
+        <button
+          type="submit"
+          className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700"
+        >
+          Përditëso
+        </button>
+      </form>
+    </div>
+  );
+}
