@@ -62,7 +62,7 @@ export default function TeamPage() {
         <div className="text-center pb-10">
           <Link href={"/create/team"}>
             <button className="px-6 py-2 bg-yellow-600 text-white rounded-full hover:bg-yellow-700 transition">
-              ➕ Shto Anëtar
+              Shto Anëtar
             </button>
           </Link>
         </div>

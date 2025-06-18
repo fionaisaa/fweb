@@ -20,7 +20,7 @@ export default function Header() {
     { name: "Contact us", pathName: "/contact" },
     { name: "Blogs", pathName: "/blogs" },
     { name: "Menu", pathName: "/menu" },
-     
+      { name: "TopProducts", pathName: "/topproducts" },
     //{ name: "News", pathName: "/news" },
 
     ...(isAdmin ? [{ name: "News", pathName: "/news" }, { name: "Orari", pathName: "/orari" }, { name: "Team", pathName: "/team" }] : []),

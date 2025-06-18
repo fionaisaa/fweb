@@ -1,7 +1,7 @@
 import {
-  createMenuItem,
-  getMenuItems,
-} from "@/pages/api/services/Menu";
+  createTopProduct,
+  getTopProducts,
+} from "@/pages/api/services/TopProducts";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -16,14 +16,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     try {
-      const result = await createMenuItem({
+      const result = await createTopProduct({
         name,
         description,
         price,
         category,
         image,
         createdAt: new Date(),
-        _id: undefined, // ose hiqe nëse modeli nuk kërkon këtë
+        _id: undefined, // opsional
       });
 
       res.status(201).json(result);
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   } else if (req.method === "GET") {
     try {
-      const items = await getMenuItems();
+      const items = await getTopProducts();
       res.status(200).json(items);
     } catch (error) {
       res.status(500).json({ error: "Dështoi marrja e produkteve" });
