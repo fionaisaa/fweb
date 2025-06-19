@@ -44,7 +44,7 @@ export default async function handler(
         res.status(201).json({ message: "Regjistrimi u krye me sukses" });
 
         
-      // Save newUser to database (code for saving is not shown)
+     
     } catch (error) {
       res.status(500).json({ error: "Gabim gjatë regjistrimit" });
     }

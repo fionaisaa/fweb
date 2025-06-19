@@ -12,7 +12,7 @@ export function MainLayout({ children, name }: Props) {
     return (
         <div>
             <Head>
-                <title>{name || "My Platform"}</title>
+                <title>{name || "Apulia Restaurant "}</title>
             </Head>
             <Header />
             <main>{children}</main>
